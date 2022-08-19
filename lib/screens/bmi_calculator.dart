@@ -13,7 +13,7 @@ class BMICalculator extends StatefulWidget {
 }
 
 class _BMICalculatorState extends State<BMICalculator> {
-  late MyPaddingClass padClass;
+  late MyPaddingClass paddingClass;
   final TextEditingController textController = TextEditingController();
 
   bool isClickedMale = true;
@@ -23,28 +23,28 @@ class _BMICalculatorState extends State<BMICalculator> {
   void weightAdd() {
     ConstantsAll.weightNumber += 1;
     setState(() {
-      user.weightInttest = ConstantsAll.weightNumber;
+      user.weightInt = ConstantsAll.weightNumber;
     });
   }
 
   void weightRemove() {
     ConstantsAll.weightNumber -= 1;
     setState(() {
-      user.weightInttest = ConstantsAll.weightNumber;
+      user.weightInt = ConstantsAll.weightNumber;
     });
   }
 
   void ageAdd() {
     ConstantsAll.ageNumber += 1;
     setState(() {
-      user.agetest = ConstantsAll.ageNumber;
+      user.age = ConstantsAll.ageNumber;
     });
   }
 
   void ageRemove() {
     ConstantsAll.ageNumber -= 1;
     setState(() {
-      user.agetest = ConstantsAll.ageNumber;
+      user.age = ConstantsAll.ageNumber;
     });
   }
 
@@ -53,9 +53,9 @@ class _BMICalculatorState extends State<BMICalculator> {
       isClickedFemale = false;
       isClickedMale = true;
       setState(() {});
-      user.genderTest = ConstantsAll.male;
+      user.gender = ConstantsAll.male;
     } else if (genderStringFunText == ConstantsAll.female) {
-      user.genderTest = ConstantsAll.female;
+      user.gender = ConstantsAll.female;
       isClickedFemale = true;
       isClickedMale = false;
       setState(() {});
@@ -65,7 +65,7 @@ class _BMICalculatorState extends State<BMICalculator> {
   @override
   void initState() {
     super.initState();
-    padClass = MyPaddingClass();
+    paddingClass = MyPaddingClass();
   }
 
   @override
@@ -115,10 +115,10 @@ class _BMICalculatorState extends State<BMICalculator> {
             context,
             MaterialPageRoute(
               builder: (context) => ResultScreen(
-                gelenAge: user.agetest ?? 18,
-                gelenWeight: user.weightInttest ?? 65,
-                gelenGender: user.genderTest ?? "Male",
-                gelenHeight: user.heighttestdouble ?? 160,
+                currentAge: user.age ?? 18,
+                currentWeight: user.weightInt ?? 65,
+                currentGender: user.gender ?? "Male",
+                currentHeight: user.heightDouble ?? 160,
               ),
             ),
           );
@@ -223,8 +223,8 @@ class _BMICalculatorState extends State<BMICalculator> {
         onChanged: (double value) {
           setState(() {
             ConstantsAll.currentValue = value;
-            user.heighttestdouble = ConstantsAll.currentValue;
-            debugPrint(user.heighttestdouble.toString());
+            user.heightDouble = ConstantsAll.currentValue;
+            debugPrint(user.heightDouble.toString());
           });
         });
   }

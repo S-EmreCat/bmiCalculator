@@ -1,31 +1,31 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class BMIVariablesModel {
-  int? agetest;
-  double? heighttestdouble;
-  int? heightInttest;
-  String? genderTest;
-  int? weightInttest;
+  int? age;
+  double? heightDouble;
+  int? heightInt;
+  String? gender;
+  int? weightInt;
 
   BMIVariablesModel(
-      {this.agetest,
-      this.genderTest,
-      this.heightInttest,
-      this.heighttestdouble,
-      this.weightInttest});
+      {this.age,
+      this.gender,
+      this.heightInt,
+      this.heightDouble,
+      this.weightInt});
 
   BMIVariablesModel copyWith({
-    int? agetest,
+    int? age,
     double? heighttestdouble,
-    int? heightInttest,
-    String? genderTest,
-    int? weightInttest,
+    int? heightInt,
+    String? gender,
+    int? weightInt,
   }) {
     return BMIVariablesModel(
-      agetest: agetest ?? this.agetest,
-      heighttestdouble: heighttestdouble ?? this.heighttestdouble,
-      heightInttest: heightInttest ?? this.heightInttest,
-      genderTest: genderTest ?? this.genderTest,
-      weightInttest: weightInttest ?? this.weightInttest,
+      age: age ?? age,
+      heightDouble: heighttestdouble ?? heightDouble,
+      heightInt: heightInt ?? heightInt,
+      gender: gender ?? gender,
+      weightInt: weightInt ?? weightInt,
     );
   }
 }

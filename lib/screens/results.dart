@@ -5,16 +5,16 @@ import 'dart:math';
 class ResultScreen extends StatefulWidget {
   const ResultScreen(
       {Key? key,
-      required this.gelenHeight,
-      required this.gelenGender,
-      required this.gelenAge,
-      required this.gelenWeight})
+      required this.currentHeight,
+      required this.currentGender,
+      required this.currentAge,
+      required this.currentWeight})
       : super(key: key);
 
-  final double gelenHeight;
-  final String gelenGender;
-  final int gelenWeight;
-  final int gelenAge;
+  final double currentHeight;
+  final String currentGender;
+  final int currentWeight;
+  final int currentAge;
   @override
   State<ResultScreen> createState() => _ResultScreenState();
 }
@@ -27,7 +27,7 @@ class _ResultScreenState extends State<ResultScreen> {
   @override
   void initState() {
     super.initState();
-    bmiResult = widget.gelenWeight / pow(widget.gelenHeight / 100, 2);
+    bmiResult = widget.currentWeight / pow(widget.currentHeight / 100, 2);
     bmiCalculator();
   }
 
@@ -72,8 +72,8 @@ class _ResultScreenState extends State<ResultScreen> {
                     child: Column(
                       children: [
                         //height
-                        textMethod(widget.gelenGender, context),
-                        textMethod(widget.gelenAge.toString(), context),
+                        textMethod(widget.currentGender, context),
+                        textMethod(widget.currentAge.toString(), context),
                       ],
                     ),
                   ),
